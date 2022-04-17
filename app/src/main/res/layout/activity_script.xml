@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".ScriptActivity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        tools:context=".ScriptActivity"
+        android:layout_weight="0.8"
+        android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:context=".ScriptActivity"
+        android:orientation="vertical">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/triggerSpinner"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            ></Spinner>
+
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/actionsSpinner"
+            style="@android:style/Widget.Holo.Light.Spinner"></Spinner>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pageSoundSpinner"
+            style="@android:style/Widget.Holo.Light.Spinner"></Spinner>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/shapeSpinner"
+            style="@android:style/Widget.Holo.Light.Spinner"></Spinner>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD Trigger Clause"
+            android:onClick="ADD"
+            ></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:context=".ScriptActivity"
+        android:orientation="vertical">
+
+<!--        <CheckBox-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="on drop"-->
+<!--            android:id="@+id/onDropCheckBox"></CheckBox>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="onDrop"></TextView>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentPageSound_on_drop_1"
+            style="@android:style/Widget.Holo.Light.Spinner"></Spinner>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentShape_on_drop_1"
+            style="@android:style/Widget.Holo.Light.Spinner"></Spinner>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentAction_on_drop"
+            style="@android:style/Widget.Holo.Light.Spinner"></Spinner>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentPageSound_on_drop_2"
+            style="@android:style/Widget.Holo.Light.Spinner"></Spinner>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentShape_on_drop_2"
+            style="@android:style/Widget.Holo.Light.Spinner"></Spinner>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD on drop clause"
+            android:id="@+id/ADD_on_drop_button"
+            android:onClick="ADD_on_drop"
+            ></Button>
+
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+    tools:context=".ScriptActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Selected Shape:"
+            ></TextView>
+        <TextView
+            android:id="@+id/shapeImageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#F00"
+            android:text="This text shows image of the selected shape"
+            ></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Generated Script:"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/combinedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#F00"
+            android:text="This text shows the combined script"
+            ></TextView>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        tools:context=".ScriptActivity"
+        android:orientation="vertical">
+
+
+        <edu.stanford.cs108.bunnyworld.ScriptView
+            android:id="@+id/script_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\n"
+            ></TextView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD script \nReturn to editor"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="20sp"
+            android:onClick="confirmScriptReturnToEditor"></Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset script \nReturn to editor"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="20sp"
+            android:onClick="confirmEditScriptReturnToEditor"></Button>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

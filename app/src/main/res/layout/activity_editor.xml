@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".EditorActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Current Page Name: "
+                    android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/currentPageTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text=""
+                    android:textColor="#F00"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/renamePageName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Rename Page" />
+
+                <Button
+                    android:id="@+id/confirmRenamePageName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="rename Page"
+                    android:onClick="renamePage"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/addNewPage"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Page"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="addPage"
+                    />
+
+                <Button
+                    android:id="@+id/deleteNewPage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delete Page"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="deletePage"
+                    />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                android:text="Go To Page:"
+                android:textSize="16dp"/>
+                <Spinner
+                    android:id="@+id/pageSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"></Spinner>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:scrollbars="vertical"
+                    android:id="@+id/scriptTextView"
+                    android:hint="Current shape script will be shown here. \nClick button on the right to edit/add script"
+
+                    ></TextView>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/editor_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <edu.stanford.cs108.bunnyworld.EditorView
+                android:layout_marginLeft="5dp"
+                android:id="@+id/editor_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!--view for shape-->
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="80dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/shapeRadioGroup"
+            android:checkedButton="@id/addShapeRadioButton">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Shape"
+                android:id="@+id/editShapeRadioButton">
+            </RadioButton>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addShapeRadioButton"
+                android:text="Add Shape">
+            </RadioButton>
+
+        </RadioGroup>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Current Shape Name: "
+            android:textSize="16dp" />
+        <TextView
+            android:id="@+id/currentShapeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="null"
+            android:textColor="#F00"
+            android:textSize="16dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/renameShapeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:layout_gravity="center_vertical"
+                android:hint="Rename Shape" />
+
+            <Button
+                android:id="@+id/confirmRenameShapeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="rename Shape"
+                android:onClick="renameCurShape"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shape Image:"
+                android:textSize="16dp"/>
+
+            <Spinner
+                android:id="@+id/shapeImageSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbarSize="16dp"
+                android:textSize = "16dp">
+            </Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="LEFT: "
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/shapeLeft"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="#900D09"
+                android:textSize="16dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="RIGHT: "
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/shapeRight"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="#900D09"
+                android:textSize="16dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="TOP: "
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/shapeTop"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="#900D09"
+                android:textSize="16dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="BOTTOM: "
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/shapeBottom"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="#900D09"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/shapeTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Shape Text Input"
+            android:textSize="16dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Text Size. Default 40.0"
+            android:textSize="16dp"
+            android:inputType="number"
+            android:id="@+id/textSizeEditText"></EditText>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Visible"
+                    android:textSize="16dp" />
+
+                <CheckBox
+                    android:id="@+id/visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:onClick="onVisibleCheckBoxClicked"
+                    />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Moveable"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"/>
+            <CheckBox
+                android:id="@+id/moveable"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                />
+
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Resize:(slide from 0.1-2)"
+                />
+            <SeekBar
+                android:id="@+id/scaleSeekbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="200"
+                android:progress="100" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:text="Copy Shape"
+            android:onClick="copyCurShape"
+            android:textSize="16dp"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="Undo shape"
+            android:onClick="undoToPreviousState"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+
+        <Button
+            android:id="@+id/addShapeEffect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add/Edit Script"
+            android:textSize="16dp"
+            android:onClick="handleEditor"/>
+        <Button
+            android:id="@+id/addOrEditShape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add/Edit Shape"
+            android:textSize="16dp"
+            android:onClick="addOrEditShape"/>
+        <Button
+            android:id="@+id/deleteShape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Shape"
+            android:textSize="16dp"
+            android:onClick="deleteCurShape"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Game Name: "
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/userGameName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/saveGame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SAVE GAME"
+            android:textSize="16dp"
+            android:layout_gravity="fill"
+            android:onClick="saveGame"
+            />
+
+    </LinearLayout>
+</LinearLayout>
